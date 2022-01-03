@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="index.css">
+  <title>MakeUp Palace</title>
+
+</head>
+<body>
+
+  <!-- Navbar section -->
+   <nav class="navbar navbar-expand-lg bg-light navbar-light fixed-top">
+     <div class= "container">
+      <a href="#" class="navbar-brand"><span id="logo">MakeUp Palace</span></a>
+
+       <buttton class="navbar-toggler"
+        type="button"
+         data-bs-toggle="collapse"
+          data-bs-target="#navmenu">
+          <span class="navbar-toggler-icon">
+            <i class="bi bi-list"></i>
+          </span>
+
+       </buttton>
+
+      <div class="collapse navbar-collapse" id="navmenu">
+         <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Our Store</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Questions</a>
+            </li>
+         </ul>
+      </div>
+     </div>
+   </nav>
+
+   <!-- Intro section -->
+   <section class="bg-light p-5 text-center intro ">
+     <div class="container">
+        <div class="d-sm-flex pt-3 align-items-center justify-content-center">
+          <div>
+            <h1 class="pt-5">Beauty Palace</h1><br>
+            <p class="lead p-5">
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem delectus amet quidem assumenda quasi soluta ab nobis labore consequuntur? Voluptates amet tempore, molestiae, repudiandae laborum sit vitae distinctio impedit, ea possimus tenetur officia nam quidem. Harum aperiam ducimus amet consectetur nam sequi aspernatur asperiores nihil voluptatum. Itaque ab impedit nemo?
+            </p>
+            <button class="btn btn-success btn-lg m-0-3">
+              Shop Now
+            </button>
+          </div>
+          
+          <img src= "./image/oil.jpeg"class="img-fluid w-50 d-none d-sm-block" alt="Oils photo">
+
+        </di<v>
+      
+     </div>
+   </section>
+  
+   <!-- Store section -->
+   <section class="bg-light text-dark p-5">
+     <div class="container">
+       <h1 class="text-center">Our Store</h1> 
+        <button id="cart-button " data-bs-toggle="modal" data-bs-target="#cart-info" >
+          <h1> <i class="bi bi-cart4 "></i></h1>
+        </button>
+                           
+
+<!-- Modal -->
+<div class="modal fade" id="cart-info" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog bg">
+    <div class="modal-content">
+      <div class="modal-header"></div>
+        <h5 class="modal-title text-center " id="cart-info">My Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="caart-info">
+        <!-- Cart row Item -->
+        <div class="row cart-row p-4 bg-dark text-light">
+          <div class="col-md-3 ">
+               <img src="./image/sunscreen.jpeg" alt="cart image" class="img-fluid cart-image w-50">
+               <p class="cart-item-title">sunscreen</p>
+           </div>
+
+          <div class="col-md-3">
+            <p class="lead cart-item-price">$10.00</p>
+          </div>
+
+          <div class="col-md-3 d-sm-flex justify-content-around">
+            <h3><i class="bi bi-plus-circle"></i></h3>
+            <p class="lead cart-item-quantity">1</p>
+            <h3><i class="bi bi-dash-circle"></i></h3>
+          </div>
+
+          <div class="col-md-3">
+            <h3><i class="bi bi-trash-fill"></i></h3>
+          </div>
+
+
+        </div>
+
+        <!-- Cart Total -->
+        <div class=" row cart-total bg-dark text-light">
+          <p class=" text-center"> Total - <span id="cart-total-amount"> $10.00</span></p>
+        </div>
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" >Check Out</button>
+      </div>
+    </div>
+  </div>
+</div>
+       
+        <p class="text-center lead">
+          We offer a variety of products to suit your skincare routine .
+        </p>
+
+        <div class="row g-4 shop-items">
+
+          <!-- First shop item -->
+            <div class="col-md-3 col-sm-6 g-4 shop-item">
+              <div class="card" style="width: 18rem;">
+                <img src="./image/essential oils.jpeg" class="img-fluid shop-item-image card-img-top " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title shop-item-title"> Fragrance oils</h5>
+                  <p class="shop-item-price"> $10.00 </p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button class="btn btn-dark">
+                    Add to Cart
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+
+            <!-- second shop item -->
+
+            <div class="col-md-3 col-sm-6 g-4 shop-item">
+              <div class="card" style="width: 18rem;">
+                <img src="./image/cocoabutter.jpeg" class="img-fluid shop-item-image card-img-top " alt="...">
+                <div class="card-body">
+                  <h5 class="card-title shop-item-title">Cocoa Butter </h5>
+                  <p class="shop-item-price"> $15.50 </p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button class="btn btn-dark">
+                    Add to Cart
+                  </button>
+                </div>
+
+                
+              </div>
+            </div>
+
+            <!-- Third shop item -->
+            <div class="col-md-3 col-sm-6 g-4 shop-item">
+              <div class="card" style="width: 18rem;">
+                <img src="./image/glycolicacid.jpeg" class="img-fluid shop-item-image card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title shop-item-title">Glycolic Acid  </h5>
+                  <p class="shop-item-price"> $12.00 </p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button class="btn btn-dark">
+                    Add to Cart
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+
+            <!-- Fourth Item -->
+
+            <div class="col-md-3 col-sm-6 g-4 shop-item">
+              <div class="card" style="width: 18rem;">
+                <img src="./image/lavenderoil.jpeg" class="img-fluid shop-item-image card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title shop-item-title">Lavender oil</h5>
+                  <p class="shop-item-price"> $10.00 </p>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <button class="btn btn-dark">
+                    Add to Cart
+                  </button>
+                </div>
+                
+              </div>
+            </div>
+
+
+              
+
+        </div>
+     </div>
+
+
+   </section>
+
+
+  <!-- Link to js file -->
+  <script src="app.js"></script>
+  <!-- Linking bootstrap 5 to JavaScript and Jquery -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
