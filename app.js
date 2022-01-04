@@ -21,77 +21,106 @@ shopBtns.forEach(function(shopBtn){
           console.log(cartItemAdded)
           
 
-      const cartItem = document.createElement('div');
-      cartItem.classList.add('row', 'p-4','bg-dark','text-light')
+        const cartItem = document.createElement('div');
+        cartItem.classList.add('row', 'p-4','bg-dark','text-light')
 
-      cartItem.innerHTML = `
+        cartItem.innerHTML += `
     
-      <div class="col-md-3 ">
-           <img src="${cartItemAdded.shopImage}" alt="cart image" class="img-fluid cart-image w-50">
-           <p class="cart-item-title">${cartItemAdded.shopTitle}</p>
-       </div>
+          <div class="col-md-3 ">
+             <img src="${cartItemAdded.shopImage}" alt="cart image" class="img-fluid cart-image w-50">
+             <p class="cart-item-title">${cartItemAdded.shopTitle}</p>
+          </div>
 
-      <div class="col-md-3">
-      <p class="lead cart-item-price">$${cartItemAdded.shopPrice}</p>
-      </div>
+           <div class="col-md-3">
+            <p class="lead cart-item-price">$${cartItemAdded.shopPrice}</p>
+           </div>
 
-      <div class="col-md-3 d-flex justify-content-around">
-        <h3><i class="bi bi-plus-circle"></i></h3>
-        <p class="lead cart-item-quantity">1</p>
-        <h3><i class="bi bi-dash-circle"></i></h3>
-      </div>
+           <div class="col-md-3 d-flex justify-content-around">
+             <h3><i class="bi bi-plus-circle"></i></h3>
+             <p class="lead cart-item-quantity">1</p>
+             <h3><i class="bi bi-dash-circle"></i></h3>
+           </div>
 
-      <div class="col-md-3">
-      <h3><i class="bi bi-trash-fill"></i></h3>
-      </div>
-      `
-    //Avoiding the same item from being added to cart twice
-      alert('Item has been added to cart')
+          <div class="col-md-3">
+            <h3><i class="bi bi-trash-fill"></i></h3>
+            </div>
+         `
+         //Avoiding the same item from being added to cart twice
+          alert('Item has been added to cart')
       
 
-    //selecting cart
+         //selecting cart
 
-    const cart = document.getElementById('caart-info');
-    //selecting total amount to be updated
-    const total = document.getElementById('cart-total-amount');
-    const totalCon= document.querySelector('.cart-total');
+         const cart = document.getElementById('caart-info');
+         //selecting total amount to be updated
+         const total = document.getElementById('cart-total-amount');
+         const totalCon= document.querySelector('.cart-total');
 
-    cart.append(cartItem)   
-    updateTotal()
-    //Checkout Button Functionanlity
-    
+         cart.append(cartItem)   
+         updateTotal()
+
         };
-    function updateTotal(){
-      total =[];
-        const items = document.querySelectorAll('.cart-item-price');
+        function updateTotal(){
+           total =[0];
+           const items = document.querySelectorAll('.cart-item-price');
 
-        items.forEach(function(item){
-          total.push(parseFloat(item.textContent.replace('$',0)));
-        })
-        console.log(total)
+           items.forEach(function(item){
+             total.push(parseFloat(item.textContent.replace('$',0)));
+        });
+     
+      
+          const totalMoney = total.reduce (function(total, item){
+            
+            total += item ;
+            return total
+          });
 
-        const totalMoney = total.reduce (function(total, item){
-          total += item ;
-          return total
-        })
         console.log(totalMoney)
         finalMoney ='$'+ totalMoney.toFixed(2)
         console.log(finalMoney)
+            //end of function updateTotal
 
         document.getElementById('cart-total-amount').textContent =finalMoney;
 
-    }
-   
+        // the trash icon to remove elements from cart
+        deleteBtns = document.querySelectorAll('.bi-trash-fill')
         
+          deleteBtns.forEach(function(deleteBtn){
+            deleteBtn.addEventListener('click', function(event){
+               event.target.parentElement.parentElement.parentElement.remove();
+               updateTotal();
+            });
+          
+          });
+          //end of trash item icon
 
-       
-      })
+          //increament and decreament function
+
+        increamentBtns = document.querySelectorAll('.bi-plus-circle');
+        decreamentBtns = document.querySelectorAll('.bi-dash-circle');
+        itemQuantitiesOriginal = document.querySelectorAll('.cart-item-quantity');
+
+        
+        
+        increamentBtns.forEach(function(increamentBtn){
+          increamentBtn.addEventListener('click',function(event){
+            var addOriginal= event.target.parentElement.nextElementSibling.textContent;
+            let  add = parseFloat(addOriginal);
+            add ++
+            return add
+            
+            
+          })
+          console.log(add)
+        })
+        
+          
+      
+      }
+ 
+
+      });
      
-  })
-  checkoutBtn = document.getElementsByClassName('checkout-btn') ;
-  console.log(checkoutBtn)
-  checkoutBtn.addEventListener('click',showBalance())
-  function showBalance(){
-    console.log("mama")
-  }
-    
+  });
+
+  

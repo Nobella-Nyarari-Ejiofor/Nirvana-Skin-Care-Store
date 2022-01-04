@@ -70,57 +70,61 @@
    <section class="bg-light text-dark p-5">
      <div class="container">
        <h1 class="text-center">Our Store</h1> 
+        <!-- Button trigger modal -->
         <button id="cart-button " data-bs-toggle="modal" data-bs-target="#cart-info" >
           <h1> <i class="bi bi-cart4 "></i></h1>
         </button>
-                           
+
+   
+
 
 <!-- Modal -->
-<div class="modal fade" id="cart-info" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog bg">
+<div class="modal fade" id="cart-info" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header"></div>
-        <h5 class="modal-title text-center " id="cart-info">My Cart</h5>
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">My Cart</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body" id="caart-info">
-        <!-- Cart row Item -->
-        <div class="row cart-row p-4 bg-dark text-light">
-          <div class="col-md-3 ">
-               <img src="./image/sunscreen.jpeg" alt="cart image" class="img-fluid cart-image w-50">
-               <p class="cart-item-title">sunscreen</p>
-           </div>
+         <div class="container-fluid">
+          <div class="row cart-row p-4 bg-dark text-light">
+            <div class="col-md-3 ">
+                 <img src="./image/sunscreen.jpeg" alt="cart image" class="img-fluid cart-image w-50">
+                 <p class="cart-item-title">sunscreen</p>
+             </div>
+  
+            <div class="col-md-3">
+              <p class="lead cart-item-price">$10.00</p>
+            </div>
+  
+            <div class="col-md-3 d-sm-flex justify-content-around">
+              <h3><i class="bi bi-plus-circle"></i></h3>
+              <p class="lead cart-item-quantity">1</p>
+              <h3><i class="bi bi-dash-circle"></i></h3>
+            </div>
+  
+            <div class="col-md-3">
+              <h3><i class="bi bi-trash-fill"></i></h3>
+            </div>
 
-          <div class="col-md-3">
-            <p class="lead cart-item-price">$10.00</p>
+
           </div>
-
-          <div class="col-md-3 d-sm-flex justify-content-around">
-            <h3><i class="bi bi-plus-circle"></i></h3>
-            <p class="lead cart-item-quantity">1</p>
-            <h3><i class="bi bi-dash-circle"></i></h3>
+           <!-- Cart total -->
+           <div class=" row cart-total bg-dark text-light">
+            <p class=" text-center"> Total - <span id="cart-total-amount"> $0.00</span></p>
           </div>
-
-          <div class="col-md-3">
-            <h3><i class="bi bi-trash-fill"></i></h3>
-          </div>
-
-
-        </div>
-
-        <!-- Cart Total -->
-        <div class=" row cart-total bg-dark text-light">
-          <p class=" text-center"> Total - <span id="cart-total-amount"> $10.00</span></p>
-        </div>
-        ...
+        
+         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" >Check Out</button>
+        <button type="button" class="btn btn-primary">Checkout</button>
       </div>
     </div>
   </div>
 </div>
+
        
         <p class="text-center lead">
           We offer a variety of products to suit your skincare routine .
