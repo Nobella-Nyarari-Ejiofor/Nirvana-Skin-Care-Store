@@ -123,8 +123,9 @@ shopBtns.forEach(function(shopBtn){
             var element= event.target.parentElement.previousElementSibling;
             console.log(event);
             var value = parseFloat(element.innerHTML) ;
-            if(value > 0 ) {
-              return value
+            if(value > 1) {
+
+              -- value
             }
             
             
