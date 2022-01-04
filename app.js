@@ -70,8 +70,10 @@ shopBtns.forEach(function(shopBtn){
      
       
           const totalMoney = total.reduce (function(total, item){
+            var element= document.querySelector('.cart-item-quantity')
+            var value = parseFloat(element.innerHTML) ;
             
-            total += item ;
+            total += item * value;
             return total
           });
 
@@ -102,17 +104,18 @@ shopBtns.forEach(function(shopBtn){
 
         
         
+        
         increamentBtns.forEach(function(increamentBtn){
           increamentBtn.addEventListener('click',function(event){
-            var addOriginal= event.target.parentElement.nextElementSibling.textContent;
-            let  add = parseFloat(addOriginal);
-            add ++
-            return add
-            
-            
-          })
-          console.log(add)
-        })
+            var element= event.target.parentElement.nextElementSibling;
+            var value = parseFloat(element.innerHTML) ;
+            console.log(value);
+
+            ++value
+
+            element.innerHTML = value;
+          });
+        });
         
           
       
