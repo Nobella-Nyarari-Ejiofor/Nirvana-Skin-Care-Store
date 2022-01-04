@@ -117,6 +117,21 @@ shopBtns.forEach(function(shopBtn){
           });
         });
         
+        //decreament of units in cart
+        decreamentBtns.forEach(function(decreamentBtn){
+          decreamentBtn.addEventListener('click',function(event){
+            var element= event.target.parentElement.previousElementSibling;
+            console.log(event);
+            var value = parseFloat(element.innerHTML) ;
+            if(value > 0 ) {
+              return value
+            }
+            
+            
+
+            element.innerHTML = value;
+          });
+        });
           
       
       }
